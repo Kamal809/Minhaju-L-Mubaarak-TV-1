@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Arc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system,
+                BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+                "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background: #050505;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            gap: 280px;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 40px;
+            background-color: #050505;
+            color: white;
+            z-index: 1000;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 40px;
+
+        }
+
+        nav a {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            color: rgb(180, 176, 176);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* nav hover */
+        nav a:hover {
+            color: white;
+        }
+
+        .ach {
+            font-size: 14px;
+            font-weight: 550;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
+            width: 100%;
+            min-height: 100vh;
+
+            background-image: url(new.png);
+            background-size: cover;
+            background-position: center;
+
+            background-color: rgba(0, 0, 0, 0.6);
+            background-blend-mode: darken;
+
+            filter: grayscale(100%);
+        }
+
+        .hero-text {
+            font-weight: 50;
+            font-size: 130px;
+        }
+
+        .hero-text span {
+            display: block;
+            font-weight: 50;
+            font-size: 130px;
+            padding-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgb(180, 176, 176);
+            max-width: 600px;
+        }
+
+        /* Services Section */
+
+        .service {
+            padding-left: 30px;
+        }
+
+        .service h3 {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .service h1 {
+            color: white;
+            font-weight: 200;
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        .what {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            font-size: 13px;
+            gap: 30px;
+            color: #999999;
+            margin-bottom: 25px;
+        }
+
+        .res {
+            display: flex;
+            gap: 20px;
+        }
+
+        .do h2 {
+            color: white;
+            font-weight: 200;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .do p {
+            color: #999999;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        /* Third Section */
+        .Third {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 150px;
+        }
+
+        /* left side */
+        .about {
+            padding-left: 30px;
+        }
+
+        .about h3 {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .about h1 {
+            color: white;
+            font-weight: 200;
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            color: #999999;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .about p span {
+            display: block;
+            margin-top: 30px;
+        }
+
+        /* right side */
+        .approach {
+            padding-left: 30px;
+        }
+
+        .app {
+            color: #999999;
+            font-size: 14px;
+            margin-top: 30px;
+            margin-left: 12px;
+        }
+
+        .approach h3 {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .container {
+            margin-left: 10px;
+        }
+
+        .div {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .line {
+            width: 2px;
+            height: 15px;
+            padding-top: 45px;
+            opacity: 0.5;
+            background-color: #999999;
+            margin-right: 20px;
+            margin-top: 30px;
+        }
+
+        .grid h3 {
+            color: white;
+            font-size: 17px;
+        }
+
+        .grid p {
+            color: #999999;
+            font-size: 15px;
+        }
+
+        .approach hr {
+            border: none;
+            opacity: 0.5;
+            border-top: 1px solid #999999;
+            margin: 5px 10px;
+        }
+
+        .dev {
+            display: flex;
+            gap: 200px;
+            margin-left: 50px;
+        }
+
+        .fun h3 {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .fun p {
+            color: white;
+            font-size: 15px;
+        }
+
+        /* fifth section */
+        .project {
+            background-color: #1a1a1a;
+
+
+        }
+
+        .project h4 {
+            color: #999999;
+            font-size: 14px;
+            margin-top: 30px;
+            margin-left: 30px;
+            padding-top: 70px;
+            margin-bottom: 20px;
+        }
+
+        .project h1 {
+            color: white;
+            font-weight: 200;
+            font-size: 50px;
+            margin-bottom: 30px;
+            margin-left: 30px;
+        }
+
+        .img {
+            width: 88%;
+            height: 300px;
+            overflow: hidden;
+            margin-top: 100px;
+        }
+
+        .project img {
+            width: 97%;
+            height: 300px;
+            object-fit: cover;
+            margin-left: 100px;
+            transition: transform 0.7s ease, filter 0.7s ease;
+            filter: brightness(75%);
+        }
+
+        .project img:hover {
+            transform: scale(1.05);
+            filter: brightness(45%);
+        }
+
+        .min {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #999999;
+        }
+
+        .min h2 {
+            color: white;
+            font-weight: 200;
+            font-size: 30px;
+            margin-left: 100px;
+        }
+
+        .min p {
+            color: #999999;
+            font-size: 14px;
+            align-items: center;
+            line-height: 1.5;
+        }
+
+        .pic p {
+            color: #999999;
+            font-size: 14px;
+            margin-left: 100px;
+            margin-bottom: 5px;
+            padding-bottom: 60px;
+        }
+
+        /* sixth section */
+        .Lap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        .get {
+            margin-left: 30px;
+        }
+
+        .get h3 {
+            color: #999999;
+            font-size: 14px;
+        }
+
+        .get h1 {
+            color: white;
+            font-weight: 200;
+            font-size: 50px;
+        }
+
+        .con h4 {
+            color: #999999;
+            font-weight: 200;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .con p {
+            color: white;
+            font-size: 17px;
+        }
+
+        /* right side  */
+        .social {
+            margin-left: 5px;
+        }
+
+        .social h5 {
+            color: #999999;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .social a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #999999;
+            opacity: 0.5;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            margin-right: 100px;
+        }
+
+        .social p {
+            color: #999999;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ================= MOBILE VIEW ================= */
+
+        .tog {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+
+            /* Header */
+            header {
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                gap: 0;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .tog {
+                display: block;
+            }
+
+            /* Hero Section */
+            .hero {
+                width: 100%;
+                min-height: 100vh;
+                padding: 120px 20px 60px;
+            }
+
+            .hero-text {
+                font-size: 55px;
+                line-height: 1;
+            }
+
+            .hero-text span {
+                font-size: 55px;
+                padding-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                max-width: 100%;
+                line-height: 1.6;
+            }
+
+            /* Services */
+            .service {
+                padding: 20px;
+            }
+
+            .service h1 {
+                font-size: 38px;
+            }
+
+            .what {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .res {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .do h2 {
+                font-size: 18px;
+            }
+
+            .do p {
+                font-size: 15px;
+            }
+
+            /* Third Section */
+            .Third {
+                grid-template-columns: 1fr;
+                margin-top: 80px;
+            }
+
+            .about,
+            .approach {
+                padding: 20px;
+            }
+
+            .about h1 {
+                font-size: 38px;
+            }
+
+            .about p {
+                font-size: 15px;
+            }
+
+            .dev {
+                gap: 60px;
+                margin-left: 0;
+                margin-top: 30px;
+            }
+
+            /* Projects */
+            .project h1 {
+                font-size: 38px;
+                margin-left: 20px;
+            }
+
+            .project h4 {
+                margin-left: 20px;
+            }
+
+            .img {
+                width: 100%;
+                height: auto;
+                margin-top: 60px;
+            }
+
+            .project img {
+                width: 100%;
+                height: 250px;
+                margin-left: 0;
+            }
+
+            .min {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .min h2 {
+                margin-left: 0;
+                font-size: 24px;
+            }
+
+            .min p {
+                font-size: 15px;
+            }
+
+            .pic p {
+                margin-left: 20px;
+                padding-bottom: 40px;
+            }
+
+            /* Last Section */
+            .Lap {
+                grid-template-columns: 1fr;
+                margin-top: 70px;
+                gap: 60px;
+            }
+
+            .get {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .get h1 {
+                font-size: 38px;
+                line-height: 1.2;
+            }
+
+            .social {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .social a {
+                font-size: 18px;
+            }
+
+            hr {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="ach">
+            ARCH STUDIO
+        </div>
+        <nav>
+            <a href="#">WORK</a>
+            <a href="#">SERVICES</a>
+            <a href="#">ABOUT</a>
+            <a href="#">BLOG</a>
+            <a href="#">CONTACT</a>
+        </nav>
+        <div class="tog">☰</div>
+    </header>
+    <section>
+        <div class="hero">
+            <h1 class="hero-text">MINIMAL
+                <span>ARCHITECTURE</span>
+            </h1>
+            <P>Creating spaces that inspire through thoughtful design and uncompromising quality</P>
+        </div>
+    </section>
+    <!-- second section -->
+    <section>
+        <div class="service">
+            <h3>SERVICES</h3>
+            <h1>What We Do</h1>
+            <div class="what">
+                <div class="res">
+                    <p>01</p>
+                    <div class="do">
+                        <h2>RESIDENTIAL</h2>
+                        <p>Crafting homes that reflect individual lifestyles while maintaining architectural integrity
+                        </p>
+                    </div>
+                </div>
+                <div class="res">
+                    <p>02</p>
+                    <div class="do">
+                        <h2>COMMERCIAL</h2>
+                        <p>Designing functional spaces that enhance business environments and user experiences
+                        </p>
+                    </div>
+                </div>
+                <div class="res">
+                    <p>03</p>
+                    <div class="do">
+                        <h2>RENOVATION</h2>
+                        <p>Transforming existing structures with contemporary sensibilities and sustainable practices
+                        </p>
+                    </div>
+                </div>
+                <div class="res">
+                    <p>04</p>
+                    <div class="do">
+                        <h2>CONSULTATION</h2>
+                        <p>Providing expert guidance on design direction, planning, and architectural solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Third Section -->
+    <section>
+        <div class="Third">
+            <div class="about">
+                <h3>About</h3>
+                <h1>Design Philosophy</h1>
+                <p>We believe architecture should enhance human experience while respecting the natural environment.
+                    Our practice focuses on creating spaces that are both functional and poetic.
+                    <span>Founded in 2015, our studio has completed over 200 projects across residential,
+                        commercial, and cultural sectors. Each project begins with careful listening and ends with
+                        thoughtful execution.</span>
+                </p>
+            </div>
+            <div class="approach">
+                <div class="app">
+                    <h3>APPROACH</h3>
+                </div>
+                <div class="container">
+                    <div class="div">
+                        <div class="line"></div>
+                        <div class="grid">
+                            <h3>Research</h3>
+                            <p>Deep understanding of context, culture, and climate</p>
+                        </div>
+                    </div>
+                    <div class="div">
+                        <div class="line"></div>
+                        <div class="grid">
+                            <h3>Collaboration</h3>
+                            <p>
+                                Close partnership with clients, engineers, and craftspeople</p>
+                        </div>
+                    </div>
+                    <div class="div">
+                        <div class="line"></div>
+                        <div class="grid">
+                            <h3>Innovation</h3>
+                            <p>
+                                Sustainable materials and forward-thinking design solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="dev">
+                    <div class="fun">
+                        <h3>FUNDED</h3>
+                        <p>2015</p>
+                    </div>
+                    <div class="fun">
+                        <h3>PROJECTS</h3>
+                        <p>200+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- fifth Section -->
+    <section>
+        <div class="project">
+            <h4>SELECTED PROJECTS</h4>
+            <h1>Our Projects</h1>
+            <div class="pic">
+                <div class="fan">
+                    <div class="img">
+                        <img src="mine.jpg" alt="Project 1">
+                    </div>
+                    <div class="min">
+
+                        <div>
+                            <h2>MINIMAL RESIDENCE</h2>
+                        </div>
+                        <div>
+                            <p>A contemporary home focusing on light, space, and material honesty</p>
+                        </div>
+                    </div>
+                </div>
+                <p>NEW YORK, 2024</p>
+            </div>
+            <div class="pic">
+                <div class="fan">
+                    <div class="img">
+                        <img src="joy.jpg" alt="Project 1">
+                    </div>
+                    <div class="min">
+                        <div>
+                            <h2>CORPORATE HEADQUARTERS</h2>
+                        </div>
+                        <div>
+                            <p>Modern office space emphasizing collaboration and natural elements</p>
+                        </div>
+                    </div>
+                </div>
+                <p>LONDON, 2023</p>
+            </div>
+            <div class="pic">
+                <div class="fan">
+                    <div class="img">
+                        <img src="but.jpg" alt="Project 1">
+                    </div>
+                    <div class="min">
+
+                        <div>
+                            <h2>CULTURAL CENTER</h2>
+                        </div>
+                        <div>
+                            <p>Public architecture that bridges tradition with contemporary design</p>
+                        </div>
+                    </div>
+                </div>
+                <p>TOKYO, 2023</p>
+            </div>
+        </div>
+    </section>
+    <!-- sixth section -->
+    <section>
+        <div class="Lap">
+            <div class="get">
+                <h3>GET IN TOUCH</h3>
+                <h1>Let's Create Something
+                    Extraordinary</h1>
+                <div class="con">
+                    <h4>EMAIL</h4>
+                    <p>hello@archstudio.com</p>
+                </div>
+                <div class="con">
+                    <h4>PHONE</h4>
+                    <p>
+                        +1 (234) 567-8900</p>
+                </div>
+                <div class="con">
+                    <h4>STUDIO</h4>
+                    <p>
+                        123 Design Avenue
+                        New York, NY 10001</p>
+                </div>
+            </div>
+            <!-- right side  -->
+            <div class="social">
+                <h5>FOLLOW US</h5>
+                <a href="#">Instagram</a><br> <br>
+                <a href="#">LinkedIn</a><br> <br>
+                <a href="#">Behance</a><br> <br>
+                <hr>
+                <p>We approach each project with curiosity, rigor, and a commitment to excellence.</p>
+                <p>Our process begins
+                    with listening, understanding your vision, and translating it</p>
+                <p>into spaces that exceed expectations.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
